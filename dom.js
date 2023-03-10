@@ -1,4 +1,8 @@
+// find element 
+
 var element = document.getElementById('one');
+
+//update elements class name 
 element.className = 'cool';
 
 
@@ -100,3 +104,109 @@ var el = document.getElementById('scriptResults');
 el.innerHTML = msg;
 firstItem.textContent = 'sourdough bread';
 
+//UPDATE TEXT AND MARKUP 
+
+// store first list item
+var firstItem = document.getElementById('one');
+//get content of first item
+var itemContent = firstItem.innerHTML;
+//update content 
+firstItem.innerHTML = '<a href=\"http://example.org\">' + itemContent + '</a>';
+
+
+//ADDING USING DOM MANIPULATION 
+
+createElement()
+createTextNode()
+appendChild()
+// create new element
+var newElement = document.createElement('li');
+//create text node
+var newText = document.createTextNode('quinoa');
+//attach text node
+newElement.appendChild(nextText);
+
+//store location of element
+var position = document.getElementByTagName('ul')[0];
+
+//insert new element 
+position.appendChild(newElement);
+
+//REMOVING USING DOM MANIPULATION 
+removeChild()
+
+//removing an element
+var removeElement = document.getElementByTagName('li')[3];
+var containerElement = removeElement.parentNode;
+
+containerElement.removeChild(removeElement);
+
+
+//COMPARING TECHNIQUES FOR UPDATING HTML CONTENT
+
+document.write()
+// quick and easy way to show beginners how to add content to a page
+element.innerHTML
+//lets you update entire content of an element faster than DOM Manipulation
+
+//DOM MANIPULATION does not affect event handlers
+
+
+// FINDING ATTRIVUTE AND RETRIEVING VALUES 
+
+var firstitem = document.getElementById('one');
+
+if (firstItem.hasAttribute('class')){
+
+    var attr = firstItem.getAttribute('class');
+    var element = document.getElementById('scriptResult');
+
+    element.innerHTML = '<p> The first item has a class name : ' +attr + '</p<';
+
+}
+
+//creating attributes and changing values 
+
+var firstItem = document.getElementById('one');
+firstItem.className = 'complete';
+
+//ADDING ATTRIBUTE to element 
+var fourthItem = document.getElementByTagName('li').item(3);
+fourthItem.setAttribute('class','cool');
+
+//REMOVING ATTRIBUTES
+
+var firstItem = document.getElementById('one');
+
+if(firstItem.hasAttribute('class')){
+    firstItem.removeAttribute('class');
+}
+
+//ADDING ITEMS TP START AND END OF A LIST 
+
+var list = document.getElementByTagName('ul')[0];
+//parent.insertBefore(newItem,target)
+
+//ADD NEW ITEM TO END OF LIST 
+
+var newItemLast = document.createElement('li');
+var newTextLast = document.createTextNode('cream');
+
+newItemLast.appendChild(newTextLast);
+list.appendChild(newItemLast);
+
+
+//ALL LI ELEMENTS
+var listItems = document.querySelectorAll('li');
+
+var i; 
+for (i = 0; i <listItems.length;i++){
+    listItems[i].className = 'cool';
+}
+
+//ADD N ITEMS IN LIST to HEADING 
+var heading = document.querySelector('h2');
+var headingText = heading.firstChild.nodeValue;
+var totalItems = listItems.length;
+var newHeading = headingText + '<span>' + totalItems + '</span>';
+heading.innerHTML = newHeading;
